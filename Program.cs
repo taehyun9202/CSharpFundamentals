@@ -238,6 +238,28 @@ namespace basic13
         }
 
 
+        // Boxing/Unboxing
+        static List<object> BoxingUnBoxing()
+        {
+            List<object> newObject = new List<object>();
+            newObject.Add(7);
+            newObject.Add(28);
+            newObject.Add(-1);
+            newObject.Add(true);
+            newObject.Add("chair");
+            int sum = 0;
+            foreach (object item in newObject)
+            {
+                Console.WriteLine(string.Join(",", item));
+                if (item is int)
+                {
+                    sum += (int)item;
+                }
+            }
+            Console.WriteLine(sum);
+            return newObject;
+        }
+
         static void Main(string[] args)
         {
             int[] array = new int[] {1,2,8,-6,2,-5};
@@ -259,6 +281,7 @@ namespace basic13
             // ZerotoNine();
             // Names();
             // Icecreams();
+            // BoxingUnBoxing();
         }   
     }
 }
